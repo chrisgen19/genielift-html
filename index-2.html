@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genie - A Terex Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the project based on reference */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .bg-genie-blue {
+            background-color: #0079c2;
+        }
+        .text-genie-blue {
+            color: #0079c2;
+        }
+        .border-genie-blue {
+            border-color: #0079c2;
+        }
+        .bg-genie-dark-blue {
+            background-color: #0e537c; /* A darker shade for hover, as seen in reference */
+        }
+        .text-genie-dark-blue {
+            color: #127bbe;
+        }
+        .bg-genie-gray {
+             background-color: #f0f0f0;
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 400px; /* Adjusted height to match reference */
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .dot.active {
+            opacity: 1;
+        }
+        .silhouette-container a {
+            color: white;
+            transition: color 0.3s;
+        }
+        .silhouette-container img {
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+        .silhouette-container a:hover {
+            color: #0e537c;
+        }
+        .silhouette-container a:hover img {
+            background-color: #0e537c;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="bg-white border-b">
+        <div class="container mx-auto px-4">
+            <!-- Top Header -->
+            <div class="flex justify-between items-center py-2">
+                <div class="flex-1">
+                     <img src="images/logo.png" alt="Genie Logo" >
+                </div>
+                <div class="flex-1 text-center">
+                    <a href="tel:134000" class="text-3xl font-bold text-genie-dark-blue hover:text-genie-blue">13 40 00</a>
+                </div>
+                <div class="flex-1 flex justify-end">
+                    <img src="images/ag-logo-blue.png" alt="Access Group Australia" >
+                </div>
+            </div>
+        </div>
+        <!-- Main Navigation -->
+        <div class="bg-genie-blue">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <nav class="hidden md:flex space-x-1">
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold bg-black/20">Lifting You Higher</a>
+                    <div class="relative group">
+                        <button class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">Products</button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg z-50 min-w-max">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Material Lifts</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Aerial Work Platforms</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Scissor Lifts</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Articulating Booms</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Telescopic Booms</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Trailer Mounted Z Booms</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Telehandlers</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-genie-blue hover:text-white">Used Equipment</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">Service</a>
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">Genie Hire</a>
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">Gallery</a>
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">About Genie Sales</a>
+                    <a href="#" class="text-white uppercase py-3 px-4 text-sm font-semibold hover:bg-black/20 transition">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-genie-blue">
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold bg-black/20 border-b border-white/20">Lifting You Higher</a>
+            <div class="relative">
+                <button id="mobile-products-btn" class="w-full text-left text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition border-b border-white/20 flex justify-between items-center">
+                    <span>Products</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="mobile-products-menu" class="hidden pl-4 bg-black/10">
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Material Lifts</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Aerial Work Platforms</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Scissor Lifts</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Articulating Booms</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Telescopic Booms</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Trailer Mounted Z Booms</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Telehandlers</a>
+                    <a href="#" class="block text-white py-2 px-4 text-sm hover:bg-black/20">Used Equipment</a>
+                </div>
+            </div>
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition border-b border-white/20">Service</a>
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition border-b border-white/20">Genie Hire</a>
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition border-b border-white/20">Gallery</a>
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition border-b border-white/20">About Genie Sales</a>
+            <a href="#" class="block text-white uppercase py-2 px-4 text-sm font-semibold hover:bg-black/20 transition">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative">
+            <div class="slider-container">
+                <!-- Slides -->
+                <div class="slide active" style="background-image: url('images/home-slide1-1920x400_c.jpg');"></div>
+                <div class="slide" style="background-image: url('images/home-slide2-1920x400_c.jpg');"></div>
+                <div class="slide" style="background-image: url('images/slideshow-service-van-1920x400_c.jpg');"></div>
+                <div class="slide" style="background-image: url('images/home-slide5-1920x400_c.jpg');"></div>
+
+                <!-- Slider Navigation -->
+                <div class="slider-dots"></div>
+                 <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl opacity-50 hover:opacity-100">&lt;</button>
+                 <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-4xl opacity-50 hover:opacity-100">&gt;</button>
+            </div>
+        </section>
+        
+        <!-- Icon Categories Section -->
+        <section class="bg-genie-blue py-4 -mt-5 relative z-10 silhouette-container">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-material-lift.png" alt="Material Lifts" class="mx-auto mb-2">
+                        Material Lifts
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-platform.png" alt="Aerial Work Platforms" class="mx-auto mb-2">
+                        Aerial Work Platforms
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-scissor.png" alt="Scissor Lifts" class="mx-auto mb-2">
+                        Scissor Lifts
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-articulting.png" alt="Articulating Booms" class="mx-auto mb-2">
+                        Articulating Booms
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-telescopic.png" alt="Telescopic Booms" class="mx-auto mb-2">
+                        Telescopic Booms
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-trailer.png" alt="Trailer Mounted Booms" class="mx-auto mb-2">
+                        Trailer Mounted Z Booms
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-telehandler.png" alt="Telehandlers" class="mx-auto mb-2">
+                        Telehandlers
+                    </a>
+                    <a href="#" class="text-sm font-semibold">
+                        <img src="images/silhouette-scissor.png" alt="Used Equipment" class="mx-auto mb-2">
+                        Used Equipment
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifting You Higher Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h1 class="text-4xl font-light text-genie-dark-blue">Lifting you Higher</h1>
+                <hr class="w-20 mx-auto my-6 border-t-2 border-genie-blue">
+                <p class="text-gray-600 leading-relaxed text-justify">
+                    Designed for reliability, easy operation, convenient service and uncompromising safety, our Genie equipment is also provided alongside an all-round service and support network from an experienced and understanding team.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed text-justify">
+                    Improving your business is our number one goal. With our range of material handlers and elevated work platforms, our products offer exceptional performance, safety and reliability.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5 Ways Section -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                 <h2 class="text-3xl font-light text-genie-dark-blue text-center">5 Ways We Have Redefined Customer Service</h2>
+                 
+                 <div class="grid grid-cols-1 md:grid-cols-5 mt-8 gap-[5px]">
+                    <img src="images/quin-1.jpg" alt="Fleet Management" class="w-full h-auto">
+                    <img src="images/quin-2.jpg" alt="Operator Training" class="w-full h-auto">
+                    <img src="images/quin-3.jpg" alt="Genie Parts" class="w-full h-auto">
+                    <img src="images/quin-4.jpg" alt="Service and Maintenance" class="w-full h-auto">
+                    <img src="images/quin-5.jpg" alt="Technical Support" class="w-full h-auto">
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pre-Footer -->
+    <div class="bg-genie-blue py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <span class="text-3xl font-bold text-white">13 40 00</span>
+            <img src="images/bottom-logo-taking.png" alt="Taking You Higher">
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-white text-gray-700 pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-genie-dark-blue">Genie Retail Distributors</h2>
+            </div>
+            <div class="flex flex-wrap justify-center items-start">
+                <!-- Retail Distributors -->
+                <div class="w-full lg:w-3/4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Perth</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">22 Enterprise crt</p>
+                            <p class="text-gray-600">Canning Vale WA 6155</p>
+                       </div>
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Adelaide</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">107 Cormack Rd</p>
+                            <p class="text-gray-600">Wingfield, SA 5013</p>
+                       </div>
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Sydney</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">192-220 Forrester Road</p>
+                            <p class="text-gray-600">St Marys, NSW 2760</p>
+                       </div>
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Melbourne</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">8 Little Boundary Rd</p>
+                            <p class="text-gray-600">Laverton North, Vic 3026</p>
+                       </div>
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Darwin</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">10 Hook Road</p>
+                            <p class="text-gray-600">Winnellie, NT 0820</p>
+                       </div>
+                       <div class="p-4">
+                            <h5 class="font-bold text-genie-blue mb-1">Whyalla</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">14 Horwood Street</p>
+                            <p class="text-gray-600">Whyalla, SA 5601</p>
+                       </div>
+                        <div class="p-4">
+                           <h5 class="font-bold text-genie-blue mb-1">Newcastle</h5>
+                            <p class="text-gray-600">Access Hire</p>
+                            <p class="text-gray-600">199 Maitland Road</p>
+                            <p class="text-gray-600">Hexham, NSW 2322</p>
+                       </div>
+                       <div class="p-4">
+                           <h5 class="font-bold text-genie-blue mb-1">Brisbane</h5>
+                           <p class="text-gray-600">Access Hire</p>
+                           <p class="text-gray-600">3 Neon Street,</p>
+                           <p class="text-gray-600">Sumner Park, Qld 4074</p>
+                       </div>
+                    </div>
+                </div>
+                <!-- 21 Years Logo -->
+                <div class="w-full lg:w-1/4 px-4 flex items-start justify-center lg:justify-end mt-8 lg:mt-0">
+                    <img src="images/partnering-21-years.png" alt="21 Years Partnering">
+                </div>
+            </div>
+            <div class="mt-12 text-center text-xs text-gray-500">
+                <p>2019 © Access Group Pty Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollTopBtn" class="fixed bottom-5 right-5 bg-genie-blue w-12 h-12 flex items-center justify-center rounded-sm hidden hover:opacity-80 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4L4 16h16L12 4z"/></svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Mobile products submenu toggle
+            const mobileProductsBtn = document.getElementById('mobile-products-btn');
+            const mobileProductsMenu = document.getElementById('mobile-products-menu');
+            mobileProductsBtn.addEventListener('click', (e) => {
+                 e.preventDefault();
+                mobileProductsMenu.classList.toggle('hidden');
+            });
+
+            // Slider functionality
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.slider-dots');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function createDots() {
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                        resetInterval();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+            }
+
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                updateDots();
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+            
+            // Event Listeners for slider
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetInterval();
+            });
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetInterval();
+            });
+
+            // Initialize slider
+            if (slides.length > 1) {
+                createDots();
+                startInterval();
+            } else {
+                 dotsContainer.style.display = 'none';
+                 prevBtn.style.display = 'none';
+                 nextBtn.style.display = 'none';
+            }
+
+
+            // Scroll to top button functionality
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollTopBtn.style.display = "flex";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            };
+
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
+
+

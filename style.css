@@ -1,0 +1,411 @@
+/*
+Theme Name: Genie Clone 
+Theme URI: 
+Author: Joshua Coombe
+Author URI: 
+Description: I don't have a description. 
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 
+Tags: 
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Typography
+3.0 Elements
+4.0 Forms
+5.0 Navigation
+	5.1 Links
+	5.2 Menus
+6.0 Accessibility
+7.0 Alignments
+8.0 Clearings
+9.0 Widgets
+10.0 Content
+	10.1 Posts and pages
+	10.2 Asides
+	10.3 Comments
+11.0 Infinite scroll
+12.0 Media
+	12.1 Captions
+	12.2 Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+
+@import url('/web/20190307013133cs_/https://www.genielifts.com.au/wp-content/themes/genie/bootstrap/css/bootstrap.css');
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption {
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	
+	
+	/* added */
+	font-size: 14px;
+	font-family: 'Roboto',Arial, sans-serif;
+	color: #333333;
+	line-height: 23px;
+	
+}
+
+body {text-align: justify;}
+p, hr, dl, pre, form, address, blockquote {
+    margin: 1.6em 0;
+}
+hr {
+	/*background-color: #ccc;*/
+	/*background-color: #000000;*/
+	background-color: #0079C2;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+ul,
+ol {
+	margin: 0;
+	padding:0px 0px 0px 20px;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+figure {
+	margin: 0;
+}
+
+img {max-width:100%;}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+
+.entry-title {}
+
+h1, h2, h3, h4, h5, h6 {color:#127bbe;}
+
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+
+blockquote {
+    width:100%;
+  border-left: 2px solid rgba(0,0,0,0.3);
+  color: white;
+  background: rgba(0,0,0,0.2);
+  float: left;
+  font-style: italic;
+  margin: 0 1.5em 16px;
+  padding: 10px 20px;
+}
+blockquote::before {
+    content: "â€Ÿ";
+    position: absolute;
+    font-size: 90px;
+    opacity: 0.3;
+    float: left;
+    margin-right: 20px;
+    line-height: calc(80%);
+}
+blockquote p {margin-top:0px;margin-left:50px;font-size:large;color:white;}
+
+.wp-caption .wp-caption-text {
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+.wp-caption img {
+    border-radius: 10px 10px 0px 0px;
+}
+
+article li {
+    margin-left: 20px;
+}
+
+
+.silhouette-container {
+    background: #0079C2;
+    text-align:center;
+    padding:10px 0;
+    margin-top:-20px;
+}
+.silhouette-container a{
+    color:white;
+    transition: 0.3s;
+}
+.silhouette-container img{
+    background:white;
+    transition: 0.3s;
+}
+.silhouette-container a:hover {
+    text-decoration: none;
+    color:#0e537c;
+}
+.silhouette-container a:hover img {
+    background:#0e537c;
+}
+
+.flexbox {display:flex;}
+.flexbox > * {margin-right:5px;}
+.flexbox > *:last-child {margin-right:0px;}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
+
+label {width:100%;margin-bottom: 10px;}
+input, button, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: #F5f5fA;
+}
+input[type="submit"] {color:white;background:#0079C2;border:none;}
+
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+
+#top {margin: 10px 0px;}
+
+@media (min-width: 1000px) {
+    /*#menu-main-menu {display: flex;justify-content: space-around;}*/
+}
+#site-navigation li {list-style: none;float:left;}
+
+#site-navigation a {text-transform: uppercase;font-size: 17px;padding: 11px 15px 10px;color: #fff;text-decoration: none;border-right: solid 1px #c1d7e3;}
+#site-navigation a:hover {text-decoration:none;}
+#site-navigation a:hover .cmm-item-label {text-decoration:underline;}
+
+#site-navigation {width:100%;background:#0079C2;}
+
+
+#site-navigation #menu-main-menu {margin-top:10px;min-height:33px;padding:0px;}
+
+#site-navigation li ul {display:none;}
+#site-navigation li:hover ul {display:block;}
+
+#site-navigation a:hover {color:white;background:black;}
+
+#site-navigation ul.sub-menu {position:absolute;z-index: 1000;background:white;margin-top:9px;padding:0px;}
+#site-navigation ul.sub-menu li {float:none;}
+#site-navigation ul.sub-menu a {border-right:none;display: block;padding:4px 15px;text-transform: none;font-size: 13px;color:black;}
+#site-navigation ul.sub-menu a:hover {background:#0079C2;color:white;}
+
+
+
+/*--------------------------------------------------------------
+5.1 Topslide
+--------------------------------------------------------------*/
+#precontent > .soliloquy-outer-container {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+#precontent .logo {
+    width:100%;
+    position: absolute;
+    top: 115px;
+    z-index: 11;
+    text-align: center;
+}
+
+#main_content {position:relative;z-index:20;padding:0px 0px 20px 0px;border-radius: 10px 10px 0px 0px;}
+
+.default_page_content {background:rgba(255,255,255,0.9);}
+.unusual_page_content {background:white;margin-top:200px}
+@media (max-width: 1000px) {
+    #precontent > .soliloquy-outer-container {position:relative;top:auto;}
+    .default_page_content {margin-top:0px;}
+    #precontent .logo {top:20vw;}
+}
+
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------------------------
+6.0 Footer
+--------------------------------------------------------------*/
+
+#blue-stripe {padding:20px 0px; margin: 10px 0px;background: #0079C2;}
+#blue-stripe p {line-height:40px;}
+#blue-stripe p, #blue-stripe a {color:white;padding:0px;margin:0px;font-size:30px;}
+#blue-stripe .right {text-align:right;}
+
+#footer {padding-top:20px;}
+#copyright {padding-bottom:30px;text-align:center;}
+#backtotop {}
+#backtotop a {
+    background: #0079C2;
+    padding: 10px 5px;
+    width: 100px;
+    color: white;
+    display: block;
+    text-align: center;
+    position:fixed;bottom:0px;right:50px;
+}
+
+#footer h4{font-size: 12px;font-weight: 600;padding: 0px;margin: 0px;}
+#footer p {margin: 0px;padding: 0px;font-size: 12px;line-height: 1.2em;}
+
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+
+.clear {clear:both;}
+.pad-top {padding-top:20px;}
+.pad-right {padding-right:20px;}
+.pad-bottom {padding-bottom:20px;}
+.pad-left {padding-left:20px;}
+.pad-all {padding:20px;}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+
+.access-red-text {color:#E31936;}
+
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+
+
+.category-news article.category-news {
+    text-align: center;
+    max-width: 300px;
+}
+
+.vision-box {
+    border: solid 3px rgba(210,210,210,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(204,204,204,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(204,204,204,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(204,204,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#cccccc',GradientType=1 );
+    padding:0px 15px; margin-bottom:10px;
+    border-radius: 10px;
+}
+
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+12.0 Products
+--------------------------------------------------------------*/
+.category-box {
+    border: solid 1px rgba(0,0,0,0.2);
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+.category-box img {
+    border-radius: 20px;
+    margin-bottom:40px;
+}
+.category-text {
+    background: rgba(0,0,0,0.1);
+    display: block;
+    padding: 10px;
+    border-radius: 0px 0px 20px 20px;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    width: 100%;
+    color: black;
+    transition:background 2s;
+}
+.category-box:hover .category-text {background:rgba(0,0,0,0.3);color:white;transition:background 0.5s;}
+
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+
+
+/*
+     FILE ARCHIVED ON 01:31:33 Mar 07, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 00:54:39 Sep 25, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.842
+  exclusion.robots: 0.065
+  exclusion.robots.policy: 0.049
+  esindex: 0.013
+  cdx.remote: 66.113
+  LoadShardBlock: 205.041 (3)
+  PetaboxLoader3.resolve: 184.343 (3)
+  PetaboxLoader3.datanode: 73.561 (4)
+  load_resource: 75.908
+*/
