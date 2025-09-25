@@ -35,6 +35,16 @@ $images = [
     'https://web.archive.org/web/20190307013028im_/https://www.genielifts.com.au/wp-content/uploads/2018/08/silhouette-trailer.png' => 'silhouette-trailer.png',
     'https://web.archive.org/web/20190307013028im_/https://www.genielifts.com.au/wp-content/uploads/2018/08/silhouette-telehandler.png' => 'silhouette-telehandler.png',
     
+    // Product category box images
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/gl.jpg' => 'gl.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/gr.jpg' => 'gr.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/gs.jpg' => 'gs.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/z.jpg' => 'z.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/s.jpg' => 's.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/tz.jpg' => 'tz.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/t.jpg' => 't.jpg',
+    'https://web.archive.org/web/20190307013232im_/https://www.genielifts.com.au/wp-content/uploads/2018/07/used.png' => 'used.png',
+    
     // 5 Ways section images
     'https://web.archive.org/web/20190307013028im_/https://www.genielifts.com.au/wp-content/uploads/2018/08/quin-1.jpg' => 'quin-1.jpg',
     'https://web.archive.org/web/20190307013028im_/https://www.genielifts.com.au/wp-content/uploads/2018/08/quin-2.jpg' => 'quin-2.jpg',

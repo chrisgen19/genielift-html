@@ -1,0 +1,27 @@
+/* Custom styles for the project based on reference */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.bg-genie-blue {
+    background-color: #0079c2;
+}
+.text-genie-blue {
+    color: #0079c2;
+}
+.border-genie-blue {
+    border-color: #0079c2;
+}
+.bg-genie-dark-blue {
+    background-color: #0e537c; /* A darker shade for hover, as seen in reference */
+}
+.text-genie-dark-blue {
+    color: #127bbe;
+}
+.category-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s;
+}
+.category-card:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
