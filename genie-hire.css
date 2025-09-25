@@ -1,0 +1,61 @@
+/* Custom styles for the project based on reference */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.bg-genie-blue {
+    background-color: #0079c2;
+}
+.text-genie-blue {
+    color: #0079c2;
+}
+.border-genie-blue {
+    border-color: #0079c2;
+}
+.bg-genie-dark-blue {
+    background-color: #0e537c;
+}
+.text-genie-dark-blue {
+    color: #127bbe;
+}
+
+.hero-section {
+    position: relative;
+    height: 400px;
+}
+
+.hero-section .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.location-grid > div {
+    border-left: 1px solid #e5e7eb;
+    padding-left: 2rem;
+}
+
+.location-grid > div:first-child,
+.location-grid > div:nth-child(4) {
+    border-left: none;
+    padding-left: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .location-grid > div:nth-child(3) {
+       border-left: none;
+       padding-left: 0;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .location-grid > div {
+        border-left: none;
+        padding-left: 0;
+    }
+}
