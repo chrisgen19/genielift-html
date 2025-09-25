@@ -12,16 +12,51 @@ body {
     border-color: #0079c2;
 }
 .bg-genie-dark-blue {
-    background-color: #0e537c; /* A darker shade for hover, as seen in reference */
+    background-color: #0e537c;
 }
 .text-genie-dark-blue {
     color: #127bbe;
 }
-.category-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-    transition: box-shadow 0.3s;
+
+/* Updated Product Category Card Styles */
+a.category-card {
+    border: 1px solid #e5e7eb; /* Light gray border */
+    border-radius: 0.75rem; /* More rounded corners */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* To ensure child elements conform to border-radius */
+    background-color: white;
+    text-decoration: none; /* Remove link underline */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover */
 }
-.category-card:hover {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+a.category-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+
+a.category-card > img {
+    padding: 1.5rem; /* Padding around the image */
+    flex-grow: 1; /* Allows the image area to fill available space */
+    object-fit: contain; /* Ensures the image scales properly within the area */
+    height: 10rem; /* Give it a consistent height */
+    width: 100%;
+}
+
+/* Style for the text label at the bottom */
+a.category-card > h3 {
+    background-color: #f3f4f6; /* Light gray background for the label */
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e5e7eb; /* Separator line */
+    color: #374151; /* Darker text color */
+    font-weight: 500; /* Medium weight */
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+a.category-card:hover > h3 {
+    background-color: #e5e7eb; /* Darken label on hover for feedback */
+}
+
